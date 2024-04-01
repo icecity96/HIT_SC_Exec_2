@@ -39,9 +39,51 @@ public interface ParkingField {
         return new ConcreteParkingField(lots);
     }
 
-    public void parking(String plate, int width, int num); // mutator, 指定车位
+    /**
+     * 将指定车辆停放在停车场的特定停车位上。
+     * <p>
+     * 此方法尝试将一个具有特定车牌号的车辆停放在指定编号的停车位上。为了成功停车，该停车位必须满足以下条件：
+     *  未被其他车辆占用、宽度大于车辆的宽度，且编号有效存在于停车场中。
+     *  同时，车辆在停车前不应已经停在停车场中的任何车位上。
+     *
+     * @param plate 要停进来的车辆的车牌号。此参数不能为空（not null）。
+     * @param width 车辆的宽度，必须是自然数（正整数）。
+     * @param num 指定的停车位编号，必须是自然数（正整数）。
+     *
+     * @throws IllegalArgumentException 如果满足以下任一条件:
+     *      - `plate`为空，
+     *      - `width`不是正整数，
+     *      - `num`不是正整数，
+     *      - `num`并不是一个合法的车位编号。
+     *  @throws IllegalStateException 如果满足以下任一条件:
+     *      - `plate`对应的车辆已经停在该停车场中的任意车位上，
+     *      - `num`对应的停车位已被其他车辆占用，
+     *      - `num`对应的停车位的宽度不超过`width`。
+     *
+     * @apiNote 应当确保在调用此方法前，`plate`、`width`、和`num`的有效性已被验证。
+     */
+    public void parking(String plate, int width, int num) throws Exception;
 
-    public void parking(String plate, int width); // mutator, 不指定车位, 随机选择车位
+    /**
+     * 在停车场中为车辆自动分配一个空闲的停车位。
+     * <p>
+     * 此方法尝试为具有特定车牌号和宽度的车辆自动寻找并分配一个空闲的停车位。
+     * 只有当车辆之前未停在停车场中，且存在至少一个空闲的停车位其宽度大于车辆宽度时，
+     * 操作才会成功。成功执行后，车辆将被分配到满足条件的一个空闲停车位上，而其他车位的状态保持不变。
+     *
+     * @param plate 要停进来的车辆的车牌号，不能为空（not null）且不为空字符串。
+     * @param width 车辆的宽度，以某个单位（如米）表示。必须是正整数，表示车辆所需的最小车位宽度。
+     *
+     * @throws IllegalArgumentException 如果满足以下任一条件:
+     *      - `plate`为空（null或空字符串）
+     *      - `width`不是正整数。
+     * @throws IllegalStateException 如果满足以下任一条件:
+     *      - `plate`对应的车辆已经停在停车场中，
+     *      - 停车场中没有足够宽的空闲车位可供该车辆停放。
+     *
+     * @apiNote 在调用此方法之前，应确保`plate`和`width`的有效性。
+     */
+    public void parking(String plate, int width) throws Exception; // mutator, 不指定车位, 随机选择车位
 
     public double depart(String plate); // mutator, 离场计费
 
