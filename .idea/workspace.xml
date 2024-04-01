@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e71e9b05-0364-4d77-938c-3e785b6c3152" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +38,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true"
+  },
+  "keyToStringList": {
+    "GitStage.ChangesTree.GroupingKeys": [
+      "module",
+      "repository"
+    ]
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -46,6 +55,19 @@
       <option name="presentableId" value="Default" />
       <updated>1711929411863</updated>
     </task>
+    <task id="LOCAL-00001" summary="v0.1 ADT design.">
+      <option name="closed" value="true" />
+      <created>1711929628864</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711929628864</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="v0.1 ADT design." />
+    <option name="LAST_COMMIT_MESSAGE" value="v0.1 ADT design." />
   </component>
 </project>
