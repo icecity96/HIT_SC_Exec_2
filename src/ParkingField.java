@@ -85,7 +85,33 @@ public interface ParkingField {
      */
     public void parking(String plate, int width) throws Exception; // mutator, 不指定车位, 随机选择车位
 
-    public double depart(String plate); // mutator, 离场计费
+    /**
+     * 处理车辆驶离停车场的操作，并计算本次停车的费用。
+     * <p>
+     * 此方法根据车辆的车牌号码，执行车辆驶离停车场的操作。车辆驶离后，原来占用的车位将被标记为空闲。基于车辆在停车场停留的时间，本方法还会计算并返回停车费用。计费规则为：每半小时收费10元，不足半小时的部分按半小时计算。
+     *
+     * @param plate 待驶离车辆的车牌号，必须为非空字符串。
+     * @return double 本次停车的费用，为精确计算的结果。
+     *
+     * @throws IllegalArgumentException 如果`plate`为空字符串或null。
+     * @throws IllegalStateException 如果车牌号为`plate`的车辆未停在本停车场中。
+     *
+     * @apiNote 假定每个车辆的停车时间已被跟踪和记录，此方法在计算费用时将使用这些信息。
+     */
+    public double depart(String plate) throws Exception;
 
-    public Map<Integer, String> status(); // observer
+    /**
+     * 获取停车场中每个车位的当前状态。
+     *
+     * 此方法返回一个映射，该映射的键为停车场中每个车位的编号，值为对应车位上的车辆车牌号。
+     * 如果某个车位当前没有车辆停放，则该车位的值为一个空字符串。这允许调用者快速了解哪些
+     * 车位被占用以及每个被占用车位上停放的车辆车牌号。
+     *
+     * @return Map<Integer, String> 一个映射，其中键（Integer类型）表示车位编号，
+     *                              值（String类型）表示该车位上车辆的车牌号。
+     *                              如果车位空闲，则值为空字符串（""）。
+     *
+     * @apiNote 此方法不抛出任何异常，总是返回当前停车场的状态，即使停车场为空（此时返回一个空映射）。
+     */
+    public Map<Integer, String> status();
 }

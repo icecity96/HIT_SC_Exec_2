@@ -96,7 +96,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711931713376</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="v0.5 spec of parking &amp; @apiNote">
+      <option name="closed" value="true" />
+      <created>1711932734300</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711932734300</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -115,6 +123,7 @@
     <MESSAGE value="v0.2 ParkingField function collect" />
     <MESSAGE value="v0.3 example of generate javaDoc" />
     <MESSAGE value="v0.4 spec of create" />
-    <option name="LAST_COMMIT_MESSAGE" value="v0.4 spec of create" />
+    <MESSAGE value="v0.5 spec of parking &amp; @apiNote" />
+    <option name="LAST_COMMIT_MESSAGE" value="v0.5 spec of parking &amp; @apiNote" />
   </component>
 </project>
