@@ -114,4 +114,38 @@ public interface ParkingField {
      * @apiNote 此方法不抛出任何异常，总是返回当前停车场的状态，即使停车场为空（此时返回一个空映射）。
      */
     public Map<Integer, String> status();
+
+    /**
+     * 返回当前停车场的总车位数量。
+     * <p>
+     * 此方法提供了一种快速获取停车场中车位总数的方式。它计算并返回停车场中所有车位的数量，
+     * 包括被占用的和空闲的车位。
+     *
+     * @return int 表示停车场中总车位数的整数。此数值包括当前所有的车位，无论它们是否被占用。
+     */
+    public int getNumberOfLots();
+
+    /**
+     * 检查停车场中是否存在具有指定编号和宽度的车位。
+     * <p>
+     * 此方法用于确定停车场中是否有一个车位，其编号和宽度分别匹配方法调用中提供的参数。
+     *
+     * @param num 车位的编号，为一个正整数。
+     * @param width 车位的宽度，也为一个正整数。这表示车位所需满足的最小宽度。
+     *
+     * @return boolean 返回true如果停车场中存在至少一个符合指定编号和宽度要求的车位；
+     *                 如果没有符合条件的车位，则返回false。
+     */
+    public boolean isLotInParkingField(int num, int width);
+
+    /**
+     * 检查停车场当前是否为空。
+     * <p>
+     * 此方法用于确定停车场是否没有任何车辆停放，即所有车位均为空闲状态。
+     *
+     * @return boolean 返回true如果停车场中没有任何车辆停放；
+     *                 如果至少有一个车位被占用，则返回false。
+     */
+    public boolean isEmpty();
+
 }
