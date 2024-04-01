@@ -34,6 +34,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "OverrideImplement.generate.javadoc": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
@@ -63,11 +64,29 @@
       <option name="project" value="LOCAL" />
       <updated>1711929628864</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="v0.2 ParkingField function collect">
+      <option name="closed" value="true" />
+      <created>1711930153788</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711930153788</updated>
+    </task>
+    <task id="LOCAL-00003" summary="v0.3 example of generate javaDoc">
+      <option name="closed" value="true" />
+      <created>1711930230155</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1711930230155</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="v0.1 ADT design." />
-    <option name="LAST_COMMIT_MESSAGE" value="v0.1 ADT design." />
+    <MESSAGE value="v0.2 ParkingField function collect" />
+    <MESSAGE value="v0.3 example of generate javaDoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="v0.3 example of generate javaDoc" />
   </component>
 </project>

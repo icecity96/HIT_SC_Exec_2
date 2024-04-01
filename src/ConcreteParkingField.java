@@ -1,6 +1,12 @@
 import java.util.Map;
 
-public class ConscreteParkingField implements ParkingField{
+public class ConcreteParkingField implements ParkingField{
+    public ConcreteParkingField(int[] nos, int[] widths) {
+    }
+
+    public ConcreteParkingField(Map<Integer, Integer> lots) {
+    }
+
     /**
      * @param plate
      * @param width
