@@ -37,6 +37,7 @@
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.ParkingFieldInstanceTest.executor": "Run",
+    "JUnit.ParkingFieldInstanceTest.testParkingInLotWithExactWidth.executor": "Run",
     "JUnit.ParkingFieldStaticTest.executor": "Run",
     "OverrideImplement.generate.javadoc": "true",
     "Repository.Attach.Annotations": "false",
@@ -254,7 +255,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712061616795</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="v1.5 parking &amp; 2 test case not pass.">
+      <option name="closed" value="true" />
+      <created>1712101615844</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1712101615844</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -316,6 +325,7 @@
     <MESSAGE value="v1.3 af &amp; ri" />
     <MESSAGE value="v1.3 check rep" />
     <MESSAGE value="v1.4 constructor" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.4 constructor" />
+    <MESSAGE value="v1.5 parking &amp; 2 test case not pass." />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.5 parking &amp; 2 test case not pass." />
   </component>
 </project>

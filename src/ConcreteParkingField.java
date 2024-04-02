@@ -209,7 +209,18 @@ public class ConcreteParkingField implements ParkingField{
      */
     @Override
     public Map<Integer, String> status() {
-        return null;
+        Map<Integer, String> parkingStatus = new HashMap<>();
+        for (Lot lot : lots) {
+            // 默认车位为空闲状态
+            String plate = "";
+            // 如果当前车位有车，则获取车牌号
+            if (status.containsKey(lot)) {
+                plate = status.get(lot).getPlate();
+            }
+            // 将车位编号和车牌号（或空字符串）放入返回的映射中
+            parkingStatus.put(lot.getNumber(), plate);
+        }
+        return parkingStatus;
     }
 
     /**

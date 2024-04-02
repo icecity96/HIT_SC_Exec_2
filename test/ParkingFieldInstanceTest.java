@@ -91,7 +91,7 @@ class ParkingFieldInstanceTest {
                 "Parking should succeed when the lot's width exactly matches the car's width.");
         Map<Integer, String> afterStatus = parkingField.status();
         assertEquals("PERFECT1", afterStatus.get(2));
-        assertTrue(parkingField.getLotWidth(2) >= 2); // 1为车位号，10为车的宽度
+        assertTrue(parkingField.getLotWidth(2) >= 2); // 2为车位号，2为车的宽度
         // 观察：其他车位的状态不变
         for (Integer lot : beforeStatus.keySet()) {
             if (lot.intValue() == 2)
