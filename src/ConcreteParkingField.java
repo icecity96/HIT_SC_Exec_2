@@ -112,7 +112,45 @@ public class ConcreteParkingField implements ParkingField{
      */
     @Override
     public void parking(String plate, int width, int num) throws Exception {
+        // 检查参数有效性
+        if (plate == null || plate.isEmpty() || width <= 0 || num <= 0) {
+            throw new IllegalArgumentException("Invalid parameters.");
+        }
 
+        // 检查车位编号是否合法
+        Optional<Lot> targetLot = lots.stream()
+                .filter(lot -> lot.getNumber() == num)
+                .findFirst();
+        if (!targetLot.isPresent()) {
+            throw new IllegalArgumentException("Parking lot number " + num + " is not a valid lot number.");
+        }
+
+        // 检查车位是否已被占用
+        if (status.containsKey(targetLot.get())) {
+            throw new IllegalStateException("Parking lot number " + num + " is already occupied.");
+        }
+
+        // 检查车位宽度是否适合
+        if (targetLot.get().getWidth() < width) {
+            throw new IllegalStateException("The car's width is too wide for the parking lot.");
+        }
+
+        // 检查车辆是否已在停车场中
+        boolean isAlreadyParked = status.values().stream()
+                .anyMatch(car -> car.getPlate().equals(plate));
+        if (isAlreadyParked) {
+            throw new IllegalStateException("The car with plate " + plate + " is already parked in the parking field.");
+        }
+
+        // 执行停车操作
+        Car car = new Car(plate, width); // 假设Car类有一个合适的构造器
+        status.put(targetLot.get(), car);
+
+        // 记录停车记录
+        Record record = new Record(car, targetLot.get()); // 假设Record类有一个合适的构造器
+        records.add(record);
+
+        checkRep();
     }
 
     /**
@@ -134,7 +172,8 @@ public class ConcreteParkingField implements ParkingField{
      */
     @Override
     public void parking(String plate, int width) throws Exception {
-
+        // TODO
+        checkRep();
     }
 
     /**
@@ -151,6 +190,8 @@ public class ConcreteParkingField implements ParkingField{
      */
     @Override
     public double depart(String plate) throws Exception {
+        // TODO
+        checkRep();
         return 0;
     }
 
