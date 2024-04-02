@@ -56,9 +56,37 @@ public class ConcreteParkingField implements ParkingField{
     }
 
     public ConcreteParkingField(int[] nos, int[] widths) {
+        // TODO
+        checkRep();
     }
 
-    public ConcreteParkingField(Map<Integer, Integer> lots) {
+    /**
+     * 创建一个新的停车场对象。
+     *
+     * @param lotsInfo 一个Map，其中的键（Integer类型）代表车位的编号，值（Integer类型）代表相应车位的宽度。
+     * @throws IllegalArgumentException 如果输入的映射`lotsInfo`的大小小于5，或者映射中的任何键（车位编号）或值（车位宽度）
+     *                                  不是正整数，则抛出此异常。
+     * @throws NullPointerException     如果`lots`为null，则抛出此异常。
+     */
+    public ConcreteParkingField(Map<Integer, Integer> lotsInfo) {
+        if (lotsInfo == null) {
+            throw new NullPointerException("The input map `lotsInfo` cannot be null.");
+        }
+        if (lotsInfo.size() < 5) {
+            throw new IllegalArgumentException("The size of `lotsInfo` must be at least 5.");
+        }
+
+        for (Map.Entry<Integer, Integer> entry : lotsInfo.entrySet()) {
+            Integer lotNumber = entry.getKey();
+            Integer width = entry.getValue();
+            if (lotNumber == null || lotNumber <= 0 || width == null || width <= 0) {
+                throw new IllegalArgumentException("Lot numbers and widths must be positive integers.");
+            }
+            // 创建Lot对象并添加到lots列表中
+            lots.add(new Lot(lotNumber, width));
+        }
+
+        checkRep();
     }
 
     /**

@@ -96,7 +96,7 @@ class ParkingFieldInstanceTest {
         for (Integer lot : beforeStatus.keySet()) {
             if (lot.intValue() == 2)
                 continue;
-            assertTrue(beforeStatus.get(lot).equals(afterStatus.get(lot)));
+            assertEquals(beforeStatus.get(lot), afterStatus.get(lot));
         }
     }
 
