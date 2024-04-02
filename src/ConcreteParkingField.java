@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ConcreteParkingField implements ParkingField{
     // Rep
@@ -26,6 +23,37 @@ public class ConcreteParkingField implements ParkingField{
      * - 对于c.records中的每个Record对象r，如果r.getTimeOut()为空，则必须有一个与之对应的条目<key, value>在c.status中，
      *   其中key为r.getLot()且value为r.getCar()，表示正在停车中的记录必须与当前占用状态一致。
      */
+
+    /**
+     * 检查表示不变量是否被保持。
+     * 这个方法应该在构造器和修改内部状态的方法后被私有调用，以确保类的状态始终有效。
+     */
+    private void checkRep() {
+        assert lots.size() >= 5 : "停车场至少应有5个车位。";
+        assert lots.size() >= status.size() : "车位数应不少于已停车辆数。";
+
+        // 检查status中的每个key是否在lots中
+        for (Lot lot : status.keySet()) {
+            assert lots.contains(lot) : "每个已占用的车位都应为有效车位。";
+        }
+
+        // 检查status中的车辆是否不重复
+        Set<Car> cars = new HashSet<>(status.values());
+        assert cars.size() == status.values().size() : "每辆车只能占用一个车位。";
+
+        // 检查车辆宽度是否适合其车位
+        for (Map.Entry<Lot, Car> entry : status.entrySet()) {
+            assert entry.getKey().getWidth() >= entry.getValue().getWidth() : "车辆宽度应小于等于车位宽度。";
+        }
+
+        // 检查正在停车中的记录是否与当前占用状态一致
+        for (Record record : records) {
+            if (record.getTimeOut() == null) { // 表示车辆尚未离开
+                assert status.containsKey(record.getLot()) && status.get(record.getLot()).equals(record.getCar()) :
+                        "正在停车中的记录应与当前占用状态一致。";
+            }
+        }
+    }
 
     public ConcreteParkingField(int[] nos, int[] widths) {
     }
