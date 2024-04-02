@@ -183,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712056068156</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="v1.2 before impl">
+      <option name="closed" value="true" />
+      <created>1712057662178</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1712057662178</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -241,6 +249,7 @@
     <MESSAGE value="v0.9 test strategy." />
     <MESSAGE value="v1.0 test strategy for ParkingInstanceTest" />
     <MESSAGE value="v1.1 test case for ParkingInstanceTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.1 test case for ParkingInstanceTest" />
+    <MESSAGE value="v1.2 before impl" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.2 before impl" />
   </component>
 </project>

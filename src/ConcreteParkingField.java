@@ -1,6 +1,32 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ConcreteParkingField implements ParkingField{
+    // Rep
+    private final List<Lot> lots = new ArrayList<>(); // 一组车位
+    private final Map<Lot, Car> status = new HashMap<>(); // 占用情况
+    private final List<Record> records = new ArrayList<>(); // 停车记录
+
+    /**
+     * Abstraction Function (AF):
+     * AF(c) = 一个停车场，如果c.lots为空，则代表一个没有车位的停车场；否则，对于每个非空的Lot l ∈ c.lots，
+     * 表示一个具有编号l.getNumber()和宽度l.getWidth()的车位。如果c.status包含l作为键，
+     * 则该车位被c.status.get(l)表示的Car占用。c.records表示该停车场的所有停车记录，其中每个Record r
+     * 描述了一次停车行为，包括车辆r.getCar()在时间r.getTimeIn()时停入车位r.getLot()，并在r.getTimeOut()时离开，
+     * 该次停车花费了r.getFee()元。
+     * <p>
+     * Representation Invariant (RI):
+     * - c.lots.size() >= 5 表示停车场至少有5个车位。
+     * - c.lots.size() >= c.status.size() 确保车位数不少于已停车辆数。
+     * - c.status中的每个键均为c.lots中的元素，保证每个已占用的车位都是有效车位。
+     * - c.status中的值（Car对象）之间不重复，确保每辆车只占用一个车位。
+     * - 对于c.status中的每个条目<key, value>，value（Car对象）的宽度不大于key（Lot对象）的宽度，保证车辆可以适合其车位。
+     * - 对于c.records中的每个Record对象r，如果r.getTimeOut()为空，则必须有一个与之对应的条目<key, value>在c.status中，
+     *   其中key为r.getLot()且value为r.getCar()，表示正在停车中的记录必须与当前占用状态一致。
+     */
+
     public ConcreteParkingField(int[] nos, int[] widths) {
     }
 
