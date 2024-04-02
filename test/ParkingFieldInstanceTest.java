@@ -86,15 +86,35 @@ class ParkingFieldInstanceTest {
     // 覆盖：车位宽度等于车辆宽度
     @Test
     void testParkingInLotWithExactWidth() {
+        Map<Integer, String> beforeStatus = parkingField.status();
         assertDoesNotThrow(() -> parkingField.parking("PERFECT1", 2, 2),
                 "Parking should succeed when the lot's width exactly matches the car's width.");
+        Map<Integer, String> afterStatus = parkingField.status();
+        assertEquals("PERFECT1", afterStatus.get(2));
+        assertTrue(parkingField.getLotWidth(2) >= 2); // 1为车位号，10为车的宽度
+        // 观察：其他车位的状态不变
+        for (Integer lot : beforeStatus.keySet()) {
+            if (lot.intValue() == 2)
+                continue;
+            assertTrue(beforeStatus.get(lot).equals(afterStatus.get(lot)));
+        }
     }
 
     // 覆盖：车位宽度大于车辆宽度
     @Test
     void testParkingInLotWithMoreThanEnoughWidth() {
+        Map<Integer, String> beforeStatus = parkingField.status();
         assertDoesNotThrow(() -> parkingField.parking("SMALL100", 2, 5),
                 "Parking should succeed when the lot's width is more than enough for the car.");
+        Map<Integer, String> afterStatus = parkingField.status();
+        assertEquals("SMALL100", afterStatus.get(5));
+        assertTrue(parkingField.getLotWidth(5) >= 2); // 1为车位号，10为车的宽度
+        // 观察：其他车位的状态不变
+        for (Integer lot : beforeStatus.keySet()) {
+            if (lot.intValue() == 5)
+                continue;
+            assertTrue(beforeStatus.get(lot).equals(afterStatus.get(lot)));
+        }
     }
 
     // 特殊情况测试：`plate`为空
@@ -116,9 +136,5 @@ class ParkingFieldInstanceTest {
     void testParkingWithInvalidLotNumber() {
         assertThrows(IllegalArgumentException.class, () -> parkingField.parking("TEST456", 2, -1),
                 "Should throw IllegalArgumentException if the lot number is not a positive integer.");
-    }
-
-    @Test
-    void parking() {
     }
 }

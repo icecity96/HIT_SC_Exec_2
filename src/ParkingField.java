@@ -148,4 +148,18 @@ public interface ParkingField {
      */
     public boolean isEmpty();
 
+    /**
+     * 返回指定车位的宽度。
+     * <p>
+     * 此方法根据提供的车位号返回对应车位的宽度。车位号必须是有效的，
+     * 即它对应一个存在于停车场中的车位。如果指定的车位号无效（即没有对应的车位存在），
+     * 方法将抛出一个异常。
+     *
+     * @param num 车位号，必须对应一个有效且存在的车位。
+     * @return 指定车位的宽度，以整数形式返回。
+     * @throws IllegalArgumentException 如果是非法的车位号，
+     *         即它不对应停车场中的任何现有车位。
+     */
+    int getLotWidth(int num) throws IllegalArgumentException;
+
 }
