@@ -1,4 +1,6 @@
 import org.junit.jupiter.api.Test;
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -31,11 +33,76 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class ParkingFieldStaticTest {
 
+    // 测试用例1：lots为空，期望抛出IllegalArgumentException
     @Test
-    void create() {
+    void testCreateWithEmptyLots() {
+        Map<Integer, Integer> lots = new HashMap<>();
+        assertThrows(IllegalArgumentException.class, () -> {
+            ParkingField.create(lots);
+        });
     }
 
+    // 测试用例2：lots大小小于5，期望抛出IllegalArgumentException
     @Test
-    void testCreate() {
+    void testCreateWithLessThanFiveLots() {
+        Map<Integer, Integer> lots = new HashMap<>();
+        lots.put(1, 10);
+        lots.put(2, 12);
+        lots.put(3, 15);
+        lots.put(4, 20);
+        assertThrows(IllegalArgumentException.class, () -> {
+            ParkingField.create(lots);
+        });
     }
+
+    // 测试用例3：lots大小等于5，期望成功创建对象
+    @Test
+    void testCreateWithFiveLots() throws Exception {
+        Map<Integer, Integer> lots = new HashMap<>();
+        for (int i = 1; i <= 5; i++) {
+            lots.put(i, 10 + i);
+        }
+        assertNotNull(ParkingField.create(lots));
+    }
+
+    // 测试用例4：lots大小大于5，期望成功创建对象
+    @Test
+    void testCreateWithMoreThanFiveLots() throws Exception{
+        Map<Integer, Integer> lots = new HashMap<>();
+        for (int i = 1; i <= 6; i++) {
+            lots.put(i, 10 + i);
+        }
+        assertNotNull(ParkingField.create(lots));
+    }
+
+    // 测试用例5：lots包含非自然数的车位编号，期望抛出IllegalArgumentException
+    @Test
+    void testCreateWithNonNaturalNumberLotID() {
+        Map<Integer, Integer> lots = new HashMap<>();
+        lots.put(-1, 10);
+        lots.put(2, 12);
+        assertThrows(IllegalArgumentException.class, () -> {
+            ParkingField.create(lots);
+        });
+    }
+
+    // 测试用例7：lots包含非自然数的宽度，期望抛出IllegalArgumentException
+    @Test
+    void testCreateWithNonNaturalNumberWidth() {
+        Map<Integer, Integer> lots = new HashMap<>();
+        lots.put(1, -10);
+        lots.put(2, 12);
+        assertThrows(IllegalArgumentException.class, () -> {
+            ParkingField.create(lots);
+        });
+    }
+
+    // 测试用例10：lots为null，期望抛出NullPointerException
+    @Test
+    void testCreateWithNullLots() {
+        assertThrows(NullPointerException.class, () -> {
+            ParkingField.create(null);
+        });
+    }
+
 }

@@ -135,7 +135,31 @@
       <option name="project" value="LOCAL" />
       <updated>1711933685422</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="v0.8 ParkingField observer spec">
+      <option name="closed" value="true" />
+      <created>1711935033218</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1711935033218</updated>
+    </task>
+    <task id="LOCAL-00010" summary="v0.8 ParkingField observer spec">
+      <option name="closed" value="true" />
+      <created>1711935041944</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1711935041944</updated>
+    </task>
+    <task id="LOCAL-00011" summary="v0.9 test strategy.">
+      <option name="closed" value="true" />
+      <created>1711935612017</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1711935612017</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,6 +181,8 @@
     <MESSAGE value="v0.5 spec of parking &amp; @apiNote" />
     <MESSAGE value="v0.6 spec of depart &amp;  status" />
     <MESSAGE value="v0.7 before test" />
-    <option name="LAST_COMMIT_MESSAGE" value="v0.7 before test" />
+    <MESSAGE value="v0.8 ParkingField observer spec" />
+    <MESSAGE value="v0.9 test strategy." />
+    <option name="LAST_COMMIT_MESSAGE" value="v0.9 test strategy." />
   </component>
 </project>
