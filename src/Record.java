@@ -13,7 +13,7 @@ public class Record {
     }
 
     public Calendar getTimeOut() {
-        return timeOut;
+        return (timeOut == null) ? null : (Calendar) timeOut.clone();
     }
 
     public Lot getLot() {
