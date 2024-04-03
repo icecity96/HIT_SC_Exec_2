@@ -37,7 +37,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.ParkingFieldInstanceTest.executor": "Run",
+    "JUnit.ParkingFieldInstanceTest.executor": "Coverage",
     "JUnit.ParkingFieldInstanceTest.testParkingInLotWithExactWidth.executor": "Run",
     "JUnit.ParkingFieldStaticTest.executor": "Run",
     "OverrideImplement.generate.javadoc": "true",
@@ -49,7 +49,8 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   },
   "keyToStringList": {
     "GitStage.ChangesTree.GroupingKeys": [
@@ -66,7 +67,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.ParkingFieldInstanceTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="HIT_SC_EX2" />
@@ -104,12 +105,19 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ParkingFieldInstanceTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ParkingFieldInstanceTest.testParkingInLotWithExactWidth" />
         <item itemvalue="JUnit.ParkingFieldStaticTest" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-3183f394aec4-96c0d24d" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -304,7 +312,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712102973787</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="v2 Representation Exposure">
+      <option name="closed" value="true" />
+      <created>1712104022733</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1712104022733</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -371,6 +387,10 @@
     <MESSAGE value="v1.5 test all passed" />
     <MESSAGE value="v1.6 write toString()" />
     <MESSAGE value="v1.6 write toString() &amp; cilent." />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.6 write toString() &amp; cilent." />
+    <MESSAGE value="v2 Representation Exposure" />
+    <option name="LAST_COMMIT_MESSAGE" value="v2 Representation Exposure" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/HIT_SC_EX2$ParkingFieldInstanceTest.ic" NAME="ParkingFieldInstanceTest Coverage Results" MODIFIED="1712104199582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
