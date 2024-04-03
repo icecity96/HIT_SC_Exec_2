@@ -290,4 +290,49 @@ public class ConcreteParkingField implements ParkingField{
         }
         throw new IllegalArgumentException("Invalid lot number: " + num);
     }
+
+    /**
+     * 返回停车场的当前状态的字符串表示。
+     * <p>
+     * 字符串包含以下信息：
+     * - 停车场的总车位数
+     * - 当前占用的车位百分比，四舍五入到最接近的整数
+     * - 每个车位的编号、宽度和当前状态（被占用的车辆车牌号或表示空闲的"Free"）
+     * <p>
+     * 格式示例：
+     * The parking field has total number of lots: 5
+     * Now 60% lots are occupied
+     * Lot 1 (200):   Car AB001
+     * Lot 2 (180):   Free
+     * Lot 3 (200):   Car CD002
+     * Lot 4 (170):   Car EF003
+     * Lot 5 (190):   Free
+     * <p>
+     * 此方法不抛出异常。
+     *
+     * @return 停车场状态的字符串表示，包括车位的使用情况和占用信息。
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        // 计算占用的车位数量
+        int occupiedLots = (int) status.keySet().stream().filter(lot -> lots.contains(lot)).count();
+        // 计算占用的百分比
+        double occupiedPercentage = ((double) occupiedLots / lots.size()) * 100;
+
+        sb.append("The parking field has total number of lots: ").append(lots.size()).append("\n");
+        sb.append("Now ").append(String.format("%.0f%%", occupiedPercentage)).append(" lots are occupied").append("\n");
+
+        for (Lot lot : lots) {
+            sb.append("Lot ").append(lot.getNumber()).append(" (").append(lot.getWidth()).append("): \t");
+            if (status.containsKey(lot)) {
+                Car car = status.get(lot);
+                sb.append("Car ").append(car.getPlate());
+            } else {
+                sb.append("Free");
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
 }
