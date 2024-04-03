@@ -35,6 +35,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.ParkingFieldInstanceTest.executor": "Run",
     "JUnit.ParkingFieldInstanceTest.testParkingInLotWithExactWidth.executor": "Run",
@@ -65,7 +66,14 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ParkingFieldInstanceTest">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="HIT_SC_EX2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ParkingFieldInstanceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="HIT_SC_EX2" />
       <option name="PACKAGE_NAME" value="" />
@@ -96,6 +104,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ParkingFieldInstanceTest" />
         <item itemvalue="JUnit.ParkingFieldInstanceTest.testParkingInLotWithExactWidth" />
         <item itemvalue="JUnit.ParkingFieldStaticTest" />
@@ -279,7 +288,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712102435233</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="v1.6 write toString()">
+      <option name="closed" value="true" />
+      <created>1712102822517</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1712102822517</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -344,6 +361,7 @@
     <MESSAGE value="v1.5 parking &amp; 2 test case not pass." />
     <MESSAGE value="v1.5 status &amp; 2 test case not pass." />
     <MESSAGE value="v1.5 test all passed" />
-    <option name="LAST_COMMIT_MESSAGE" value="v1.5 test all passed" />
+    <MESSAGE value="v1.6 write toString()" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.6 write toString()" />
   </component>
 </project>
