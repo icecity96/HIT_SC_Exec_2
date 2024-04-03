@@ -233,7 +233,7 @@ public class ConcreteParkingField implements ParkingField{
      */
     @Override
     public int getNumberOfLots() {
-        return 0;
+        return lots.size();
     }
 
     /**
@@ -248,6 +248,11 @@ public class ConcreteParkingField implements ParkingField{
      */
     @Override
     public boolean isLotInParkingField(int num, int width) {
+        for (Lot lot : lots) {
+            if (lot.getNumber() == num && lot.getWidth() == width)
+                return true;
+        }
+
         return false;
     }
 
@@ -261,7 +266,7 @@ public class ConcreteParkingField implements ParkingField{
      */
     @Override
     public boolean isEmpty() {
-        return false;
+        return status.isEmpty();
     }
 
     /**
@@ -278,6 +283,11 @@ public class ConcreteParkingField implements ParkingField{
      */
     @Override
     public int getLotWidth(int num) throws IllegalArgumentException {
-        return 0;
+        for (Lot lot : lots) {
+            if (lot.getNumber() == num) {
+                return lot.getWidth();
+            }
+        }
+        throw new IllegalArgumentException("Invalid lot number: " + num);
     }
 }
